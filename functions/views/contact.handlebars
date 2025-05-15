@@ -1,0 +1,126 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<body>
+    <main>
+        <!-- page-title-area start -->
+        <div class="page-title-area pos-relative gray-bg pt-90 pb-60 fix background-black">
+            <!-- style="background-image: url(img/bg/page-title-bg.jpg);">-->
+            <div class="shape-slider">
+                <img class="shape shape-2  " src="img/shape/shape2.png" alt="">
+                <img class="shape shape-4 " src="img/shape/shape3.png" alt="">
+                <img class="shape shape-5 " src="img/shape/shape-sq.png" alt="">
+                <img class="shape shape-6 " src="img/shape/shape-c-2.png" alt="">
+            </div>
+            <div class="container padding-cero">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="page-title mb-30">
+                            <h3 class="title-padding" style="color:white">{{__ "contactPage.section1.title"}}</h3>
+                            <p style="color:white">{{__ "contactPage.section1.subtitle"}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- page-title-area end -->
+
+        <!-- contact-form-area -->
+        <div class="contact-form-area pt-140 pb-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-10 offset-lg-1 offset-xl-2">
+                        <div class="section-title-2 text-center mb-70">
+                            <h2 class="mb-20">{{__ "contactPage.section2.title"}}</h2>
+                            <p>{{__ "contactPage.section2.subtitle"}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-5 offset-xl-1">
+                        <div class="contact-info mb-30">
+                            <h3>{{__ "contactPage.section3.leftSide.title1"}}</h3>
+                            <p>{{__ "contactPage.section3.leftSide.subtitle1"}}</p>
+
+                            <ul class="mt-40">
+                                <li>
+                                    <div class="c-info-icon">
+                                        <img src="img/icon/c-icon.png" alt="">
+                                    </div>
+                                    <div class="c-info-text">
+                                        <h4>{{__ "contactPage.section3.leftSide.title2"}}</h4>
+                                        <p>{{__ "contactPage.section3.leftSide.subtitle2"}}</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="c-info-icon">
+                                        <img src="img/icon/c-icon-2.png" alt="">
+                                    </div>
+                                    <div class="c-info-text">
+                                        <h4>{{__ "contactPage.section3.leftSide.title3"}}</h4>
+                                        <p>{{__ "contactPage.section3.leftSide.subtitle3"}}</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="c-info-icon">
+                                        <img src="img/icon/c-icon-3.png" alt="">
+                                    </div>
+                                    <div class="c-info-text">
+                                        <h4>{{__ "contactPage.section3.leftSide.title4"}}</h4>
+                                        <p>{{__ "contactPage.section3.leftSide.subtitle4"}}</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="c-info-icon">
+                                        <img src="img/icon/c-icon-4.png" alt="">
+                                    </div>
+                                    <div class="c-info-text">
+                                        <h4>{{__ "contactPage.section3.leftSide.title5"}}</h4>
+                                        <p><a href="https://wa.me/message/D7Y5PY2U6IA4E1">{{__ "contactPage.section3.leftSide.subtitle5"}}</a></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-7">
+                        <div class="contact-form mb-30">
+                            <form id="contact-form" action="/sent-email" method="POST">
+                                <input id="nameField" name="name" type="text" placeholder="{{{__ "contactPage.section3.rightSide.field1"}}}" required>
+                                <input name="email" type="email" placeholder="{{__ "contactPage.section3.rightSide.field2"}}" required>
+                                <!-- <input name="topic" type="text" placeholder="{{__ "contactPage.section3.rightSide.field3"}}" required>-->
+                                <textarea name="subject" cols="10" rows="30" placeholder="{{__ "contactPage.section3.rightSide.field4"}}" required></textarea>
+                                <button type="submit" class="x-btn btn-black" onclick="showAlert();">{{__ "contactPage.section3.rightSide.button1"}}</button>
+                            </form>
+                            <br>
+                            <div class="container" style="display:none;" id="myAlert">
+                                <div class="alert alert-success alert-dismissable" id="myAlert2">
+                                    <button type="button" class="close" data-dismiss="alert"
+                                        aria-hidden="true">&times;</button>
+                                    {{__ "contactPage.section3.messageConfirmation"}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function showAlert() {
+                if ($("#nameField").val()) {
+                    $(document).ready(function () {
+                        $('#contact-form').submit(function () {
+                            $('#myAlert').show();
+                            $("#myAlert").css("display", "");
+                            window.setTimeout(function () {
+                                $("#myAlert").fadeTo(7500).slideUp(500, function () {
+                                    $(this).hide();
+                                });
+                            }, 3000);
+                        });
+                    });
+                }
+            }
+        </script>
+    </main>
+
+</html>
