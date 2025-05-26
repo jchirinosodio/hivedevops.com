@@ -29,7 +29,7 @@ router.post('/sent-email', async(req, res) => {
 
     let info = await transporter.sendMail({
         from: '"New Client" <hivedevopscr@gmail.com>',
-        to: ["info@hivedevops.com","monica@hivedevops.com"],
+        to: ["info@hivedevops.com"],
         subject: 'Website Contact Form',
         html: contentHTML,
     })
